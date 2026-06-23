@@ -3,7 +3,7 @@ export const BUSINESS = {
   phone: "+91 7780613454",
   phoneDisplay: "+91 77806 13454",
   phoneHref: "tel:+917780613454",
-  whatsapp: "https://wa.me/917780613454",
+  whatsapp: "https://wa.me/917780613454?text=Hello%2C%20I%20need%20professional%20safety%20net%20services.%20%0ACan%20you%20provide%20a%20quotation%3F",
   email: "nagamanisafetynets@gmail.com",
   emailHref: "mailto:nagamanisafetynets@gmail.com",
   address: "Bangalore, Karnataka, India",
@@ -71,12 +71,12 @@ export const SERVICES = [
     keywords: ["monkey net bangalore", "anti monkey net", "monkey proof net"],
   },
   {
-    slug: "construction-safety-nets",
-    title: "Construction Safety Nets",
+    slug: "cricket-safety-nets",
+    title: "Cricket Safety Nets",
     shortDesc:
-      "HDPE debris and fall-arrest nets for building sites — meet all safety standards.",
-    icon: "construction",
-    keywords: ["construction safety net bangalore", "building net", "debris net"],
+      "Professional cricket practice nets for homes, apartments, terraces and academies.",
+    icon: "cricket",
+    keywords: ["cricket net bangalore", "cricket practice net", "cricket net installation bangalore"],
   },
   {
     slug: "duct-area-safety-nets",
