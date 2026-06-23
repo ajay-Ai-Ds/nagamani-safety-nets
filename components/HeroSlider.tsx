@@ -67,7 +67,7 @@ export default function HeroSlider() {
         aria-label="Previous slide"
         className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-green-600 border border-white/20 hover:border-green-500 text-white backdrop-blur-sm transition-all duration-200 hover:scale-110 active:scale-95 group"
       >
-        <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
       </button>
@@ -78,7 +78,7 @@ export default function HeroSlider() {
         aria-label="Next slide"
         className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-green-600 border border-white/20 hover:border-green-500 text-white backdrop-blur-sm transition-all duration-200 hover:scale-110 active:scale-95 group"
       >
-        <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
       </button>
@@ -87,8 +87,8 @@ export default function HeroSlider() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 md:py-32 flex flex-col items-start justify-center min-h-[500px] md:min-h-[620px]">
         <div className="max-w-2xl">
           {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-            <span className="text-yellow-400">⭐ {BUSINESS.rating}/5</span>
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-5" aria-label={`Rating: ${BUSINESS.rating} out of 5 stars`}>
+            <span className="text-yellow-300">⭐ {BUSINESS.rating}/5</span>
             <span className="text-white/70">·</span>
             <span>{BUSINESS.reviewCount}+ Happy Customers</span>
             <span className="text-white/70">·</span>
@@ -96,8 +96,8 @@ export default function HeroSlider() {
           </div>
 
           {/* Slide label badge */}
-          <div className="mb-3">
-            <span className="inline-block bg-green-500/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full transition-all duration-500">
+          <div className="mb-3" aria-live="polite" aria-atomic="true">
+            <span className="inline-block bg-green-500/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full transition-all duration-500" role="status">
               {SLIDES[current].label}
             </span>
           </div>
@@ -107,7 +107,7 @@ export default function HeroSlider() {
             <span className="text-green-400">Bangalore</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed">
             Protect your family, children and pets with premium quality safety net solutions. Free inspection · Same day installation · Best price guaranteed.
           </p>
 

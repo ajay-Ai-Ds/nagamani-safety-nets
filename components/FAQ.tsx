@@ -18,9 +18,9 @@ export default function FAQ({ items = FAQS as unknown as { question: string; ans
         <div className="space-y-3">
           {items.map((faq, i) => (
             <details key={i} className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-green-300 transition-colors">
-              <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-gray-900 hover:text-green-700 transition-colors">
+              <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-gray-900 hover:text-green-700 transition-colors" role="button" aria-expanded="false">
                 <span>{faq.question}</span>
-                <span className="shrink-0 w-7 h-7 rounded-full bg-green-100 text-green-600 flex items-center justify-center group-open:rotate-180 transition-transform duration-300">
+                <span className="shrink-0 w-7 h-7 rounded-full bg-green-100 text-green-600 flex items-center justify-center group-open:rotate-180 transition-transform duration-300" aria-hidden="true">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>

@@ -28,8 +28,8 @@ export default function ServiceCard({ title, description, slug, imagePath, image
             loading="lazy"
           />
         ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center border-2 border-dashed border-green-300/60 m-3 rounded-xl">
-            <svg className="w-10 h-10 text-green-400/50 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+          <div className="absolute inset-0 flex flex-col items-center justify-center border-2 border-dashed border-green-300/60 m-3 rounded-xl" role="img" aria-label={`Placeholder for ${title} image`}>
+            <svg className="w-10 h-10 text-green-400/50 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 21h18M3.75 3h16.5M4.5 3v18M19.5 3v18" />
             </svg>
             <p className="text-green-600/60 text-xs font-medium text-center px-2">{title}</p>

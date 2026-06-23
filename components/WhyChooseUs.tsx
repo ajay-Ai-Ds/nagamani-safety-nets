@@ -46,11 +46,11 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {WHY_CHOOSE_US.map((item) => (
             <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-              <div className="w-14 h-14 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center mb-4" aria-hidden="true">
                 {ICONS[item.icon]}
               </div>
               <h3 className="font-bold text-gray-900 text-lg mb-2">{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
