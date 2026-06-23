@@ -1,92 +1,87 @@
+"use client";
 import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
 import { BUSINESS } from "@/lib/constants";
 
-/* ─────────────────────────────────────────────
-   CSS-only hero slider — 6 slides, 3s rotation
-   No JavaScript, no external library
-────────────────────────────────────────────── */
-
 const SLIDES = [
-  {
-    id: 1,
-    label: "Balcony Safety Nets",
-    imagePath: "/images/hero-balcony.jpg",
-    alt: "Balcony safety net installation in Bangalore apartment",
-  },
-  {
-    id: 2,
-    label: "Invisible Grills",
-    imagePath: "/images/hero-invisible-grills.jpg",
-    alt: "Invisible grills installed on apartment window Bangalore",
-  },
-  {
-    id: 3,
-    label: "Bird Nets",
-    imagePath: "/images/hero-bird-nets.jpg",
-    alt: "Bird net installation to prevent birds in Bangalore",
-  },
-  {
-    id: 4,
-    label: "Cloth Hangers",
-    imagePath: "/images/hero-cloth-hangers.jpg",
-    alt: "Ceiling cloth hanger system installed in Bangalore balcony",
-  },
-  {
-    id: 5,
-    label: "Children Safety Nets",
-    imagePath: "/images/hero-children-nets.jpg",
-    alt: "Children safety net on staircase in Bangalore home",
-  },
-  {
-    id: 6,
-    label: "Construction Safety Nets",
-    imagePath: "/images/hero-construction-nets.jpg",
-    alt: "Construction site safety net installation Bangalore",
-  },
+  { id: 1, label: "Balcony Safety Nets",  imagePath: "/images/balcony.webp",              alt: "Balcony safety net installation in Bangalore apartment" },
+  { id: 2, label: "Invisible Grills",     imagePath: "/images/invisible grill.webp",      alt: "Invisible grills installed on apartment window Bangalore" },
+  { id: 3, label: "Bird Nets",            imagePath: "/images/antibirdnet.jpg",           alt: "Bird net installation to prevent birds in Bangalore" },
+  { id: 4, label: "Children Safety Nets", imagePath: "/images/child.webp",               alt: "Children safety net on staircase in Bangalore home" },
+  { id: 5, label: "Cricket Safety Nets",  imagePath: "/images/cricket.jpeg",             alt: "Cricket practice net installation Bangalore" },
+  { id: 6, label: "Monkey Safety Nets",   imagePath: "/images/monkey.webp",              alt: "Monkey safety net installation Bangalore" },
+  { id: 7, label: "Our Team",             imagePath: "/images/team.webp",               alt: "Nagamani Safety Nets professional team Bangalore" },
 ];
 
-const TOTAL = SLIDES.length;
-const DURATION = 3; // seconds per slide
+const DURATION = 3000; // ms per slide
 
 export default function HeroSlider() {
-  return (
-    <section className="relative w-full overflow-hidden bg-gray-900" style={{ minHeight: "500px" }}>
-      {/* ── Slide Track ── */}
-      <div className="hero-slider-track absolute inset-0">
-        {SLIDES.map((slide, i) => (
-          <div
-            key={slide.id}
-            className="hero-slide absolute inset-0"
-            style={{ animationDelay: `${i * DURATION}s` }}
-          >
-            {/* IMAGE PLACEHOLDER
-                When you have your real image:
-                Replace the div below with:
-                <Image
-                  src={slide.imagePath}
-                  alt={slide.alt}
-                  fill
-                  className="object-cover"
-                  priority={i === 0}
-                  sizes="100vw"
-                />
-            */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-green-800 to-green-900 border-4 border-dashed border-green-500/40">
-              <div className="text-center">
-                <svg className="w-16 h-16 text-green-400/60 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 21h18M3.75 3h16.5M4.5 3v18M19.5 3v18" />
-                </svg>
-                <p className="text-green-300/80 text-sm font-medium">Add your image here</p>
-                <p className="text-green-400/60 text-xs mt-1">{slide.imagePath}</p>
-                <p className="text-green-300/50 text-xs mt-1">{slide.label}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+  const [current, setCurrent] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
-      {/* ── Dark overlay gradient ── */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10 pointer-events-none" />
+  const goTo = useCallback((index: number) => {
+    if (animating) return;
+    setAnimating(true);
+    setCurrent((index + SLIDES.length) % SLIDES.length);
+    setTimeout(() => setAnimating(false), 600);
+  }, [animating]);
+
+  const next = useCallback(() => goTo(current + 1), [current, goTo]);
+  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+
+  // Auto-play — resets when user manually navigates
+  useEffect(() => {
+    const timer = setInterval(next, DURATION);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  return (
+    <section className="relative w-full overflow-hidden bg-gray-900 min-h-[500px] md:min-h-[620px]">
+
+      {/* ── Slides ── */}
+      {SLIDES.map((slide, i) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+            i === current ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          <Image
+            src={slide.imagePath}
+            alt={slide.alt}
+            fill
+            className="object-cover"
+            priority={i === 0}
+            sizes="100vw"
+          />
+        </div>
+      ))}
+
+      {/* ── Dark overlay ── */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/20 z-20 pointer-events-none" />
+
+      {/* ── Left Arrow ── */}
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-green-600 border border-white/20 hover:border-green-500 text-white backdrop-blur-sm transition-all duration-200 hover:scale-110 active:scale-95 group"
+      >
+        <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+
+      {/* ── Right Arrow ── */}
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-green-600 border border-white/20 hover:border-green-500 text-white backdrop-blur-sm transition-all duration-200 hover:scale-110 active:scale-95 group"
+      >
+        <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
 
       {/* ── Hero Content ── */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 md:py-32 flex flex-col items-start justify-center min-h-[500px] md:min-h-[620px]">
@@ -97,7 +92,14 @@ export default function HeroSlider() {
             <span className="text-white/70">·</span>
             <span>{BUSINESS.reviewCount}+ Happy Customers</span>
             <span className="text-white/70">·</span>
-            <span>Bangalore's #1 Safety Net Company</span>
+            <span>Bangalore&apos;s #1 Safety Net Company</span>
+          </div>
+
+          {/* Slide label badge */}
+          <div className="mb-3">
+            <span className="inline-block bg-green-500/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full transition-all duration-500">
+              {SLIDES[current].label}
+            </span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
@@ -146,40 +148,20 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ── Slide dots ── */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      {/* ── Dot indicators ── */}
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 flex gap-2">
         {SLIDES.map((_, i) => (
-          <span key={i} className="hero-dot" style={{ animationDelay: `${i * DURATION}s` }} />
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === current ? "w-6 bg-green-400" : "w-2 bg-white/40 hover:bg-white/70"
+            }`}
+          />
         ))}
       </div>
 
-      {/* ── Inline CSS for the slider animation ── */}
-      <style>{`
-        @keyframes slideShow {
-          0%        { opacity: 1; z-index: 2; }
-          ${100 / TOTAL - 5}%  { opacity: 1; z-index: 2; }
-          ${100 / TOTAL}%      { opacity: 0; z-index: 1; }
-          100%      { opacity: 0; z-index: 1; }
-        }
-        @keyframes dotActive {
-          0%        { background-color: #22c55e; width: 24px; }
-          ${100 / TOTAL - 5}%  { background-color: #22c55e; width: 24px; }
-          ${100 / TOTAL}%      { background-color: rgba(255,255,255,0.4); width: 8px; }
-          100%      { background-color: rgba(255,255,255,0.4); width: 8px; }
-        }
-        .hero-slide {
-          opacity: 0;
-          animation: slideShow ${TOTAL * DURATION}s linear infinite;
-        }
-        .hero-dot {
-          height: 8px;
-          width: 8px;
-          border-radius: 9999px;
-          background-color: rgba(255,255,255,0.4);
-          animation: dotActive ${TOTAL * DURATION}s linear infinite;
-          transition: all 0.3s;
-        }
-      `}</style>
     </section>
   );
 }

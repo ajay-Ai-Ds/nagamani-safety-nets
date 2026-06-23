@@ -178,6 +178,74 @@ export default function HomePage() {
       <WhyChooseUs />
       <WorkProcess />
 
+      {/* ── Our Work Gallery ── */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-green-100 text-green-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Our Work</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Real Installations Across Bangalore</h2>
+            <p className="mt-3 text-gray-500 max-w-xl mx-auto">Trusted by 5000+ families. Every installation done with care, precision and premium materials.</p>
+          </div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+
+            {/* Team — wide on mobile */}
+            <div className="col-span-2 md:col-span-1 relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+              <Image src="/images/team.webp" alt="Nagamani Safety Nets professional team Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-4 left-4 text-white font-bold text-sm bg-green-600 px-3 py-1 rounded-full">Our Team</span>
+            </div>
+
+            {/* Monkey Nets */}
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+              <Image src="/images/monkey.webp" alt="Monkey safety net installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-white font-bold text-xs bg-green-600 px-2.5 py-1 rounded-full">Monkey Nets</span>
+            </div>
+
+            {/* Invisible Grills */}
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+              <Image src="/images/invisible grill.webp" alt="Invisible grills installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-white font-bold text-xs bg-green-600 px-2.5 py-1 rounded-full">Invisible Grills</span>
+            </div>
+
+            {/* Pigeon Nets */}
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+              <Image src="/images/pigeon-safety-nets.webp" alt="Pigeon safety net installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-white font-bold text-xs bg-green-600 px-2.5 py-1 rounded-full">Pigeon Nets</span>
+            </div>
+
+            {/* Cricket Nets */}
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+              <Image src="/images/cricket.jpeg" alt="Cricket practice net installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-white font-bold text-xs bg-green-600 px-2.5 py-1 rounded-full">Cricket Nets</span>
+            </div>
+
+            {/* Balcony Nets */}
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+              <Image src="/images/balcony.webp" alt="Balcony safety net installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-white font-bold text-xs bg-green-600 px-2.5 py-1 rounded-full">Balcony Nets</span>
+            </div>
+
+          </div>
+
+          {/* View Full Gallery */}
+          <div className="text-center mt-8">
+            <Link href="/gallery" className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-green-600 text-green-700 font-bold rounded-xl hover:bg-green-600 hover:text-white transition-all duration-200 shadow-sm hover:shadow-lg">
+              View Full Gallery
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTABanner title="Get Your Free Safety Net Quote Today" subtitle="Same day installation available. Free site inspection. Best price guaranteed." />
 
