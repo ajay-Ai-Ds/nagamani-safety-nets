@@ -87,7 +87,7 @@ export default function HeroSlider() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 md:py-32 flex flex-col items-start justify-center min-h-[500px] md:min-h-[620px]">
         <div className="max-w-2xl">
           {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-5" aria-label={`Rating: ${BUSINESS.rating} out of 5 stars`}>
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-5" role="img" aria-label={`Rating: ${BUSINESS.rating} out of 5 stars`}>
             <span className="text-yellow-300">⭐ {BUSINESS.rating}/5</span>
             <span className="text-white/70">·</span>
             <span>{BUSINESS.reviewCount}+ Happy Customers</span>
