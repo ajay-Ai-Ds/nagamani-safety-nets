@@ -66,7 +66,7 @@ export default function HomePage() {
               // Map uploaded images to matching service slugs
               const imageMap: Record<string, { path: string; alt: string }> = {
                 "invisible-grills": {
-                  path: "/images/invisible grill.webp",
+                  path: "/images/invisiblegrill.webp",
                   alt: "Invisible grills installed on apartment balcony in Bangalore",
                 },
                 "children-safety-nets": {
@@ -206,7 +206,7 @@ export default function HomePage() {
 
             {/* Invisible Grills */}
             <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
-              <Image src="/images/invisible grill.webp" alt="Invisible grills installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
+              <Image src="/images/invisiblegrill.webp" alt="Invisible grills installation Bangalore" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute bottom-3 left-3 text-white font-bold text-xs bg-green-600 px-2.5 py-1 rounded-full">Invisible Grills</span>
             </div>

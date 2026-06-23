@@ -23,7 +23,7 @@ export default function InvisibleGrillsPage() {
       slug="invisible-grills"
       heroHeadline="Invisible Grills in Bangalore — Maximum Safety, Zero Compromise on Views"
       heroSub="Premium SS316 stainless steel cable grills for windows and balconies. Transparent, strong, child-safe, and maintenance-free. Serving all Bangalore areas."
-      imagePath="/images/invisible grill.webp"
+      imagePath="/images/invisiblegrill.webp"
       imageAlt="Invisible grills installed on apartment window in Bangalore"
       relatedServices={[
         { title: "Balcony Safety Nets", slug: "balcony-safety-nets" },
