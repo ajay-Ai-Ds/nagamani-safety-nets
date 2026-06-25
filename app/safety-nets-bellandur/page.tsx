@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
-export const metadata = buildMetadata({ title: "Safety Nets in Bellandur Bangalore | Nagamani Safety Nets", description: "Safety net installation in Bellandur, Bangalore. Balcony nets, bird nets, invisible grills near Bellandur Lake. Call +91 7780613454.", path: "/safety-nets-bellandur", keywords: ["safety nets bellandur", "bird nets bellandur bangalore", "balcony nets bellandur"] });
+export const metadata = buildMetadata({ title: "Safety Nets in Bellandur Bangalore", description: "Safety net installation in Bellandur, Bangalore. Balcony nets, bird nets, invisible grills near Bellandur Lake. Call +91 7780613454.", path: "/safety-nets-bellandur", keywords: ["safety nets bellandur", "bird nets bellandur bangalore", "balcony nets bellandur"] });
 const faqs = [
   { question: "Do you install safety nets in Bellandur?", answer: "Yes. We serve all of Bellandur including Bellandur Gate, Kadubeesanahalli, Outer Ring Road, and Sarjapur Road junction areas." },
   { question: "Why are bird nets especially needed in Bellandur?", answer: "Bellandur's proximity to Bellandur Lake attracts large numbers of birds including egrets, herons, and pigeons. Bird nets and pigeon nets are particularly popular in Bellandur apartments." },

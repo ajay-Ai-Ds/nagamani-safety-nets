@@ -2,7 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
 
 export const metadata = buildMetadata({
-  title: "Safety Nets in Marathahalli Bangalore | Nagamani Safety Nets",
+  title: "Safety Nets in Marathahalli Bangalore",
   description: "Safety net installation in Marathahalli, Bangalore. Balcony nets, invisible grills, bird nets. Serving all Marathahalli apartments and villas. Call +91 7780613454.",
   path: "/safety-nets-marathahalli",
   keywords: ["safety nets marathahalli", "balcony safety nets marathahalli", "invisible grills marathahalli"],

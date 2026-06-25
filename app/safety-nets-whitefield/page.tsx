@@ -2,7 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
 
 export const metadata = buildMetadata({
-  title: "Safety Nets in Whitefield Bangalore | Nagamani Safety Nets",
+  title: "Safety Nets in Whitefield Bangalore",
   description: "Premium safety net installation in Whitefield, Bangalore. Balcony nets, invisible grills, bird nets. Serving ITPL, Varthur, Kadugodi and all Whitefield areas. Call +91 7780613454.",
   path: "/safety-nets-whitefield",
   keywords: ["safety nets whitefield", "balcony safety nets whitefield", "invisible grills whitefield bangalore"],

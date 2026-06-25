@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
-export const metadata = buildMetadata({ title: "Safety Nets in HSR Layout Bangalore | Nagamani Safety Nets", description: "Safety net installation in HSR Layout, Bangalore. Balcony nets, invisible grills, bird nets. Serving all HSR Layout sectors. Call +91 7780613454.", path: "/safety-nets-hsr-layout", keywords: ["safety nets hsr layout", "invisible grills hsr layout bangalore", "balcony nets hsr layout"] });
+export const metadata = buildMetadata({ title: "Safety Nets in HSR Layout Bangalore", description: "Safety net installation in HSR Layout, Bangalore. Balcony nets, invisible grills, bird nets. Serving all HSR Layout sectors. Call +91 7780613454.", path: "/safety-nets-hsr-layout", keywords: ["safety nets hsr layout", "invisible grills hsr layout bangalore", "balcony nets hsr layout"] });
 const faqs = [
   { question: "Do you install safety nets in HSR Layout?", answer: "Yes. We serve all HSR Layout sectors (1–7) and surrounding areas including Agara, Belandur Road, and Harlur." },
   { question: "Are invisible grills popular in HSR Layout?", answer: "Yes. HSR Layout is home to many premium apartments and villas where invisible grills are a popular choice for their clean aesthetics and superior strength." },

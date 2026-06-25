@@ -14,10 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.url),
-  title: {
-    default: `${BUSINESS.name} | Premium Safety Nets & Invisible Grills in Bangalore`,
-    template: `%s | ${BUSINESS.name}`,
-  },
+  title: `${BUSINESS.name} | Premium Safety Nets & Invisible Grills in Bangalore`,
   description: "Nagamani Safety Nets — Bangalore's #1 safety net company. Balcony nets, invisible grills, bird nets, children safety nets. Free inspection. Same day installation. Call +91 7780613454.",
   keywords: ["safety nets bangalore", "invisible grills bangalore", "balcony safety nets", "bird nets bangalore", "nagamani safety nets"],
   authors: [{ name: BUSINESS.name }],

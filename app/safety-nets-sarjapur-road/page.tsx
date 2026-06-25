@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
-export const metadata = buildMetadata({ title: "Safety Nets in Sarjapur Road Bangalore | Nagamani Safety Nets", description: "Safety net installation along Sarjapur Road, Bangalore. Balcony nets, invisible grills, bird nets. Serving Carmelram, Haralur, Ambalipura and all Sarjapur Road areas. Call +91 7780613454.", path: "/safety-nets-sarjapur-road", keywords: ["safety nets sarjapur road", "balcony nets sarjapur road bangalore", "invisible grills sarjapur road"] });
+export const metadata = buildMetadata({ title: "Safety Nets in Sarjapur Road Bangalore", description: "Safety net installation along Sarjapur Road, Bangalore. Balcony nets, invisible grills, bird nets. Serving Carmelram, Haralur, Ambalipura and all Sarjapur Road areas. Call +91 7780613454.", path: "/safety-nets-sarjapur-road", keywords: ["safety nets sarjapur road", "balcony nets sarjapur road bangalore", "invisible grills sarjapur road"] });
 const faqs = [
   { question: "Do you install safety nets along Sarjapur Road?", answer: "Yes. We serve all of Sarjapur Road including Carmelram, Haralur Road, Ambalipura, Dommasandra, and Sarjapur Town." },
   { question: "How quickly can you install in Sarjapur Road?", answer: "Same-day installation is available in most Sarjapur Road areas. Call us before noon for same-day service." },

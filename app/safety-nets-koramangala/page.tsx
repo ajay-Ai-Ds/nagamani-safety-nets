@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
-export const metadata = buildMetadata({ title: "Safety Nets in Koramangala Bangalore | Nagamani Safety Nets", description: "Safety net installation in Koramangala, Bangalore. Balcony nets, invisible grills, bird nets. Serving all Koramangala blocks. Call +91 7780613454.", path: "/safety-nets-koramangala", keywords: ["safety nets koramangala", "invisible grills koramangala bangalore", "balcony nets koramangala"] });
+export const metadata = buildMetadata({ title: "Safety Nets in Koramangala Bangalore", description: "Safety net installation in Koramangala, Bangalore. Balcony nets, invisible grills, bird nets. Serving all Koramangala blocks. Call +91 7780613454.", path: "/safety-nets-koramangala", keywords: ["safety nets koramangala", "invisible grills koramangala bangalore", "balcony nets koramangala"] });
 const faqs = [
   { question: "Do you install safety nets in Koramangala?", answer: "Yes. We serve all Koramangala blocks (1–8) and adjacent areas including Ejipura, Domlur, and Madiwala." },
   { question: "How quickly can you install in Koramangala?", answer: "We offer same-day installation in Koramangala. Call before noon for same-day service across all blocks." },

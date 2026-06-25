@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import LocationPageTemplate from "@/components/LocationPageTemplate";
-export const metadata = buildMetadata({ title: "Safety Nets in Indiranagar Bangalore | Nagamani Safety Nets", description: "Safety net installation in Indiranagar, Bangalore. Balcony nets, invisible grills, bird nets. Serving 100 Feet Road, CMH Road and all Indiranagar areas. Call +91 7780613454.", path: "/safety-nets-indiranagar", keywords: ["safety nets indiranagar", "invisible grills indiranagar bangalore", "balcony nets indiranagar"] });
+export const metadata = buildMetadata({ title: "Safety Nets in Indiranagar Bangalore", description: "Safety net installation in Indiranagar, Bangalore. Balcony nets, invisible grills, bird nets. Serving 100 Feet Road, CMH Road and all Indiranagar areas. Call +91 7780613454.", path: "/safety-nets-indiranagar", keywords: ["safety nets indiranagar", "invisible grills indiranagar bangalore", "balcony nets indiranagar"] });
 const faqs = [
   { question: "Do you install safety nets in Indiranagar?", answer: "Yes. We serve all of Indiranagar including 100 Feet Road, CMH Road, Old Madras Road, and HAL areas." },
   { question: "How quickly can you install in Indiranagar?", answer: "Same-day installation is available in Indiranagar. Call before noon for same-day service." },
