@@ -20,6 +20,8 @@ export default function MarathahalliPage() {
     <LocationPageTemplate
       area="Marathahalli"
       slug="safety-nets-marathahalli"
+      imageSrc="/images/balcony.webp"
+      imageAlt="Balcony safety net installation in Marathahalli Bangalore"
       faqs={faqs}
       content={
         <div className="space-y-8">

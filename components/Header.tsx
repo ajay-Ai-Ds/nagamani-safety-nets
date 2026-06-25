@@ -34,33 +34,33 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-14" : "h-16 md:h-20"
+            scrolled ? "h-16" : "h-20 md:h-24"
           }`}
         >
           {/* ── Logo ── */}
           <Link
             href="/"
-            className="flex items-center gap-3 shrink-0 group"
+            className="flex items-center gap-4 shrink-0 group"
           >
-            <div className="transition-transform duration-300 group-hover:scale-110">
+            <div className="transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/images/logo.webp"
                 alt="Nagamani Safety Nets Logo"
-                width={scrolled ? 36 : 44}
-                height={scrolled ? 36 : 44}
+                width={scrolled ? 40 : 56}
+                height={scrolled ? 40 : 56}
                 priority
-                className="rounded-xl object-contain transition-all duration-300"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl object-contain transition-all duration-300"
               />
             </div>
             <div className="transition-all duration-300">
               <span
                 className={`text-green-700 font-extrabold leading-tight block transition-all duration-300 ${
-                  scrolled ? "text-base" : "text-lg"
+                  scrolled ? "text-xl md:text-2xl" : "text-2xl md:text-3xl"
                 }`}
               >
                 Nagamani
               </span>
-              <span className="text-gray-600 text-xs leading-tight block">
+              <span className={`text-gray-600 leading-tight block ${scrolled ? "text-sm" : "text-base md:text-lg"}`}>
                 Safety Nets
               </span>
             </div>

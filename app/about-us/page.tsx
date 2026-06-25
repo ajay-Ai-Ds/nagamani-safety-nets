@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
 import { buildMetadata } from "@/lib/metadata";
 import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/schema";
@@ -35,15 +36,15 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image placeholder */}
-            <div className="rounded-3xl overflow-hidden bg-green-50 aspect-[4/3] flex items-center justify-center border-2 border-dashed border-green-300">
-              <div className="text-center p-6">
-                <svg className="w-16 h-16 text-green-400/50 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 21h18M3.75 3h16.5M4.5 3v18M19.5 3v18" />
-                </svg>
-                <p className="text-green-700/70 font-semibold text-sm">Add your company / founder photo</p>
-                <p className="text-green-600/50 text-xs mt-1">/images/about-founder.jpg</p>
-              </div>
+            <div className="rounded-3xl overflow-hidden bg-green-50 aspect-[4/3] border border-green-100 shadow-sm">
+              <Image
+                src="/images/team1.webp"
+                alt="Nagamani Safety Nets team at work"
+                width={1200}
+                height={900}
+                className="object-cover w-full h-full"
+                priority
+              />
             </div>
             <div>
               <h2 className="text-3xl font-extrabold text-gray-900 mb-5">Our Story</h2>

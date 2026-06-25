@@ -20,6 +20,8 @@ export default function WhitefieldPage() {
     <LocationPageTemplate
       area="Whitefield"
       slug="safety-nets-whitefield"
+      imageSrc="/images/team1.webp"
+      imageAlt="Whitefield safety nets installation team"
       faqs={faqs}
       content={
         <div className="space-y-8">

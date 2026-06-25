@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BUSINESS, SERVICES } from "@/lib/constants";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -10,9 +11,11 @@ interface LocationPageTemplateProps {
   slug: string;
   content: React.ReactNode;
   faqs: { question: string; answer: string }[];
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-export default function LocationPageTemplate({ area, slug, content, faqs }: LocationPageTemplateProps) {
+export default function LocationPageTemplate({ area, slug, content, faqs, imageSrc, imageAlt }: LocationPageTemplateProps) {
   const url = `${BUSINESS.url}/${slug}`;
   const breadcrumb = generateBreadcrumbSchema([
     { name: "Home", url: BUSINESS.url },
@@ -54,16 +57,27 @@ export default function LocationPageTemplate({ area, slug, content, faqs }: Loca
                 </Link>
               </div>
             </div>
-            {/* Location image placeholder */}
-            <div className="rounded-3xl overflow-hidden bg-white/10 border-2 border-dashed border-white/30 aspect-[4/3] flex items-center justify-center">
-              <div className="text-center p-6">
-                <svg className="w-14 h-14 text-white/30 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-                <p className="text-white/60 font-semibold text-sm">Add {area} area photo</p>
-                <p className="text-white/30 text-xs mt-1">/images/{slug}.jpg</p>
+            {imageSrc ? (
+              <div className="rounded-3xl overflow-hidden bg-white/10 aspect-[4/3]">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt ?? `${area} safety nets`}
+                  width={900}
+                  height={675}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            </div>
+            ) : (
+              <div className="rounded-3xl overflow-hidden bg-white/10 border-2 border-dashed border-white/30 aspect-[4/3] flex items-center justify-center">
+                <div className="text-center p-6">
+                  <svg className="w-14 h-14 text-white/30 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  <p className="text-white/60 font-semibold text-sm">Add {area} area photo</p>
+                  <p className="text-white/30 text-xs mt-1">/images/{slug}.jpg</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
