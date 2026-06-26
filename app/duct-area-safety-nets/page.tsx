@@ -22,7 +22,7 @@ export default function DuctAreaSafetyNetsPage() {
       slug="duct-area-safety-nets"
       heroHeadline="Duct Area Safety Nets in Bangalore — Keep Ducts Clean and Safe"
       heroSub="Professional duct area net installation for apartments. Prevents birds, debris, and accidents in building duct spaces. Free inspection across Bangalore."
-      imagePath="/images/ductarea1.webp"
+      imagePath="/images/ductarea2.webp"
       imageAlt="Duct area safety net installed in apartment building Bangalore"
       relatedServices={[
         { title: "Bird Nets", slug: "bird-nets" },

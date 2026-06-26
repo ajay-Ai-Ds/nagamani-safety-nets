@@ -7,7 +7,7 @@ import { BUSINESS } from "@/lib/constants";
 const SLIDES = [
   { id: 1, label: "Balcony Safety Nets",  imagePath: "/images/balcony.webp",              alt: "Balcony safety net installation in Bangalore apartment" },
   { id: 2, label: "Invisible Grills",     imagePath: "/images/invisiblegrill.webp",      alt: "Invisible grills installed on apartment window Bangalore" },
-  { id: 3, label: "Bird Nets",            imagePath: "/images/antibirdnet.jpg",           alt: "Bird net installation to prevent birds in Bangalore" },
+  { id: 3, label: "Bird Nets",            imagePath: "/images/ductarea1.webp",           alt: "Bird net installation to prevent birds in Bangalore" },
   { id: 4, label: "Children Safety Nets", imagePath: "/images/child.webp",               alt: "Children safety net on staircase in Bangalore home" },
   { id: 5, label: "Cricket Safety Nets",  imagePath: "/images/cricket.jpeg",             alt: "Cricket practice net installation Bangalore" },
   { id: 6, label: "Monkey Safety Nets",   imagePath: "/images/monkey.webp",              alt: "Monkey safety net installation Bangalore" },
