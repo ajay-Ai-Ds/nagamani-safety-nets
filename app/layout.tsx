@@ -53,6 +53,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-18278629354');
+
+            window.gtag_report_conversion = function() {
+              if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('event', 'conversion', {
+                  'send_to': 'AW-18278629354/9YlQCI6ep8gcEOr_9otE'
+                });
+              }
+            };
+
+            document.addEventListener('click', function(event) {
+              const target = event.target instanceof Element
+                ? event.target.closest("a[href^='tel:']")
+                : null;
+
+              if (target) {
+                window.gtag_report_conversion();
+              }
+            });
           `}
         </Script>
         <script
